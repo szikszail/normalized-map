@@ -1,6 +1,6 @@
 # normalized-map
 
-![Downloads](https://img.shields.io/npm/dw/normalized-map-template-6ai?style=flat-square) ![Version@npm](https://img.shields.io/npm/v/normalized-map-template-6ai?label=version%40npm&style=flat-square) ![Version@git](https://img.shields.io/github/package-json/v/szikszail/normalized-map/main?label=version%40git&style=flat-square) ![CI](https://img.shields.io/github/actions/workflow/status/szikszail/normalized-map/ci.yml?branch=main&label=ci&style=flat-square) ![Docs](https://img.shields.io/github/actions/workflow/status/szikszail/normalized-map/docs.yml?branch=main&label=docs&style=flat-square)
+![Downloads](https://img.shields.io/npm/dw/normalized-map?style=flat-square) ![Version@npm](https://img.shields.io/npm/v/normalized-map?label=version%40npm&style=flat-square) ![Version@git](https://img.shields.io/github/package-json/v/szikszail/normalized-map/main?label=version%40git&style=flat-square) ![CI](https://img.shields.io/github/actions/workflow/status/szikszail/normalized-map/ci.yml?branch=main&label=ci&style=flat-square) ![Docs](https://img.shields.io/github/actions/workflow/status/szikszail/normalized-map/docs.yml?branch=main&label=docs&style=flat-square)
 
 The `normalized-map` is an open-source Javascript map object that handles and normalizes string keys. It treats all keys as case-insensitive and ignores special characters. This powerful tool helps developers handle diverse input scenarios where the string key's case and presence of special characters should not affect the map's functionality.
 
