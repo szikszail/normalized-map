@@ -1,7 +1,7 @@
 {
-  "name": "npm-package-template-6ai",
-  "version": "0.0.1",
-  "description": "This repository/project is a template/placeholder for new NPM packages.",
+  "name": "normalized-map",
+  "version": "1.0.0",
+  "description": "An open-source Javascript map object that handles and normalizes string keys",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/szikszail/npm-package.git"
+    "url": "git+https://github.com/szikszail/normalized-map.git"
   },
   "keywords": [],
   "author": "Laszlo Szikszai <sziklaszlo@gmail.com>",
@@ -30,9 +30,9 @@
     "node": ">=12.0.0"
   },
   "bugs": {
-    "url": "https://github.com/szikszail/npm-package/issues"
+    "url": "https://github.com/szikszail/normalized-map/issues"
   },
-  "homepage": "https://github.com/szikszail/npm-package#readme",
+  "homepage": "https://github.com/szikszail/normalized-map#readme",
   "devDependencies": {
     "@types/debug": "^4.1.12",
     "@types/jest": "^29.5.12",
