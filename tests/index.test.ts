@@ -73,4 +73,18 @@ describe("NormalizedMap", () => {
     ]);
     expect(Array.from(map.keys())).toEqual(["1", "2", "3", "4"]);
   });
+
+  // test overwriting key regexp
+  it("constructor with custom key regexp", () => {
+    const mapA = new NormalizedMap<number>([
+      ["a_", 1],
+    ]);
+    expect(mapA.get("a")).not.toBe(1);
+    NormalizedMap.overwriteKeyRegexp(/[^a]/g);
+
+    const mapB = new NormalizedMap<number>([
+      ["a_", 1],
+    ]);
+    expect(mapB.get("a")).toBe(1);
+  });
 });

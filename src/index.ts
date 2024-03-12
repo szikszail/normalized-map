@@ -3,6 +3,8 @@ import debug = require("debug");
 const log = debug("normalized-map");
 
 export class NormalizedMap<V> extends Map<string, V> {
+  protected static KEY_REGEXP = /\W/g;
+
   constructor(entries?: ReadonlyArray<readonly [string, V]> | null) {
     super(entries?.map(([key, value]) => [NormalizedMap.normalizeKey(key), value]));
   }
@@ -27,9 +29,13 @@ export class NormalizedMap<V> extends Map<string, V> {
     return super.set(NormalizedMap.normalizeKey(key), value);
   }
 
-  private static normalizeKey(key: string): string {
+  public static overwriteKeyRegexp(regexp: RegExp): void {
+    NormalizedMap.KEY_REGEXP = regexp;
+  }
+
+  protected static normalizeKey(key: string): string {
     return key.toString()
       .toLowerCase()
-      .replace(/\W/g, "");
+      .replace(NormalizedMap.KEY_REGEXP, "");
   }
 }
