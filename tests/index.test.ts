@@ -45,7 +45,7 @@ describe("NormalizedMap", () => {
       ["a", 1],
       ["A", 2],
       [" a ", 3],
-      ["a!", 4]
+      ["a!", 4],
     ]);
     expect(map.get("a")).toBe(4);
   });
@@ -55,36 +55,32 @@ describe("NormalizedMap", () => {
       ["a", 1],
       ["A", 2],
       [" a ", 3],
-      ["a!", 4]
+      ["a!", 4],
     ]);
     expect(Array.from(map.keys())).toEqual(["a"]);
   });
 
   it("keys with non-string keys", () => {
     const map = new NormalizedMap<number>([
-      // @ts-expect-error
+      // @ts-expect-error Invalid keys
       [1, 1],
-      // @ts-expect-error
+      // @ts-expect-error Invalid keys
       [2, 2],
-      // @ts-expect-error
+      // @ts-expect-error Invalid keys
       [3, 3],
-      // @ts-expect-error
-      [4, 4]
+      // @ts-expect-error Invalid keys
+      [4, 4],
     ]);
     expect(Array.from(map.keys())).toEqual(["1", "2", "3", "4"]);
   });
 
   // test overwriting key regexp
   it("constructor with custom key regexp", () => {
-    const mapA = new NormalizedMap<number>([
-      ["a_", 1],
-    ]);
+    const mapA = new NormalizedMap<number>([["a_", 1]]);
     expect(mapA.get("a")).not.toBe(1);
     NormalizedMap.overwriteKeyRegexp(/[^a]/g);
 
-    const mapB = new NormalizedMap<number>([
-      ["a_", 1],
-    ]);
+    const mapB = new NormalizedMap<number>([["a_", 1]]);
     expect(mapB.get("a")).toBe(1);
   });
 });

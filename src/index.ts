@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 import debug = require("debug");
 
 const log = debug("normalized-map");
@@ -6,7 +7,9 @@ export class NormalizedMap<V> extends Map<string, V> {
   protected static KEY_REGEXP = /\W/g;
 
   constructor(entries?: ReadonlyArray<readonly [string, V]> | null) {
-    super(entries?.map(([key, value]) => [NormalizedMap.normalizeKey(key), value]));
+    super(
+      entries?.map(([key, value]) => [NormalizedMap.normalizeKey(key), value]),
+    );
   }
 
   public get(key: string): V | undefined {
@@ -34,8 +37,6 @@ export class NormalizedMap<V> extends Map<string, V> {
   }
 
   protected static normalizeKey(key: string): string {
-    return key.toString()
-      .toLowerCase()
-      .replace(NormalizedMap.KEY_REGEXP, "");
+    return key.toString().toLowerCase().replace(NormalizedMap.KEY_REGEXP, "");
   }
 }
